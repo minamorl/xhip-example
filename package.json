@@ -1,0 +1,28 @@
+{
+  "name": "xhip-examples",
+  "version": "1.0.0",
+  "description": "Example application of Xhip framework.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start:frontend": "cd frontend && webpack-dev-server",
+    "start:server": "npm run build && node ./lib/index.js",
+    "start": "npm-run-all -p start:*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "minamorl",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^15.0.0",
+    "@types/react-dom": "^0.14.20",
+    "npm-run-all": "^4.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "ts-loader": "^1.3.3",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2",
+    "xhip": "^0.0.14",
+    "xhip-client": "^0.0.9",
+    "xhip-server": "0.0.5"
+  }
+}
