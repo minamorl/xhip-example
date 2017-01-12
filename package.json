@@ -1,5 +1,5 @@
 {
-  "name": "xhip-examples",
+  "name": "xhip-example",
   "version": "1.0.0",
   "description": "Example application of Xhip framework.",
   "main": "index.js",
