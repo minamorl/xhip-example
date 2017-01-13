@@ -4,24 +4,26 @@ import * as ReactDOM from "react-dom"
 import { Client } from "xhip-client"
 import app from "../../server/app"
 
-class Body extends React.Component<void, { message: string }> {
+class Body extends React.Component<void, { message: string, ip: string }> {
   constructor() {
     super()
     this.state = {
-      message: ""
+      message: "",
+      ip: ""
     }
   }
   componentWillMount() {
-    const client = new Client("http://localhost:8080/", { ssl: false })
-    client.exec([app.echo("hello, world!")]).then((res: any) => {
+    const client = new Client("http://localhost:8080", { ssl: false })
+    client.exec([app.echo("hello, world!"), app.getServerIP()]).then((res: any) => {
       this.setState({
-        message: res.message
+        message: res.message,
+        ip: res.ip
       })
     })
   }
   render() {
     return <div>
-      {this.state.message}
+      {this.state.message} from {this.state.ip}
     </div>
   }
 }

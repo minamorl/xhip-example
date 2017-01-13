@@ -1,7 +1,9 @@
 import { Server } from "xhip-server"
 import app from "./app"
+import * as http from "http"
 
-new Server(app, {
+const server = new Server(app, {
   origin: 'http://localhost:8888',
   credentials: true,
-}).app.listen(8080)
+}).app
+http.createServer(server).listen(8080)
