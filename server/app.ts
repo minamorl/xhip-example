@@ -16,6 +16,9 @@ export class App {
       console.log(err)
     })
   }
+  @op chat(message: string) {
+    return { chat: 'Get: ' + message }
+  }
 }
 
 export default new App()
