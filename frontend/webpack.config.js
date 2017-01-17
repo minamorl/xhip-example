@@ -1,5 +1,6 @@
 "use strict"
 
+require("dotenv").config({ path: '../.env' })
 const webpack = require("webpack")
 const path = require("path")
 
@@ -8,7 +9,7 @@ module.exports = {
     app: "./src/index.tsx",
   },
   output: {
-    path: path.resolve(__dirname, "/dist"),
+    path: "dist",
     filename: "bundle.js"
   },
   resolve: {
@@ -26,4 +27,9 @@ module.exports = {
     contentBase: 'dist',
     port: 8888
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT)
+    })
+  ]
 }

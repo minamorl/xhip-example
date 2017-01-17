@@ -21,7 +21,8 @@ class Body extends React.Component<void, BodyState> {
       input: "",
       messageList: []
     }
-    this.client = new Client("http://localhost:8080", { ssl: false })
+    const url = new URL(process.env.API_ENDPOINT).host
+    this.client = new Client("http://" + url, { ssl: false })
   }
   componentWillMount() {
     this.client.exec([app.echo("hello, world!"), app.getServerIP()]).then((res: any) => {

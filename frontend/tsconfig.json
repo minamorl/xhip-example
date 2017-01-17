@@ -8,7 +8,6 @@
     "strictNullChecks": true,
     "sourceMap": true,
     "outDir": "./lib",
-    "declaration": true,
     "jsx": "react",
     "types": [
       "node"
