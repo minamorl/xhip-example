@@ -21,7 +21,7 @@ class Body extends React.Component<void, BodyState> {
       input: "",
       messageList: []
     }
-    const url = new URL(process.env.API_ENDPOINT).host
+    const url = new URL(process.env.API_ENDPOINT || window.location.href).host
     this.client = new Client("http://" + url, { ssl: false })
   }
   componentWillMount() {
