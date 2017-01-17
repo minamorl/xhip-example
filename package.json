@@ -3,19 +3,27 @@
   "version": "1.0.0",
   "description": "Example application of Xhip framework.",
   "main": "index.js",
+  "engines": {
+    "node": "7.4.0"
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "npm-run-all -p build:*",
+    "build:frontend": "cd frontend && webpack",
+    "build:server": "tsc",
     "start:frontend": "cd frontend && webpack-dev-server --inline",
-    "start:server": "rm -rf ./lib && npm run build && node ./lib/index.js",
-    "start": "npm-run-all -p start:*",
+    "start:server": "rm -rf ./lib && npm run build:server && node ./lib/index.js",
+    "start": "npm run build && node ./lib/index.js",
+    "dev": "NODE_ENV=development npm-run-all -p start:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "minamorl",
   "license": "MIT",
   "dependencies": {
+    "@types/dotenv": "^2.0.20",
     "@types/react": "^15.0.0",
     "@types/react-dom": "^0.14.20",
     "@types/request": "0.0.39",
+    "dotenv": "^4.0.0",
     "npm-run-all": "^4.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

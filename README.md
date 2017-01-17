@@ -6,5 +6,5 @@ This is an example of [Xhip](https://github.com/minamorl/xhip/).
 
 ```
 npm install
-npm start
+sudo npm dev 
 ```
