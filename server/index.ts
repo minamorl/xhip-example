@@ -14,4 +14,6 @@ const server = new Server(app, {
   cors
 })
 server.app.use(serveStatic(path.join(__dirname, '../frontend/dist'), {'index': ['index.html']}))
-server.listen(process.env.PORT || process.env.API_ENDPOINT ? URL.parse(process.env.API_ENDPOINT).port : 80)
+const endpoint = process.env.API_ENDPOINT || ""
+const port = process.env.PORT || URL.parse(endpoint).port || 8080
+server.listen(port)
