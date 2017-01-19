@@ -13,7 +13,7 @@
     "start:frontend": "cd frontend && webpack-dev-server --inline",
     "start:server": "rm -rf ./lib && npm run build:server && node ./lib/index.js",
     "start": "npm run build && node ./lib/index.js",
-    "dev": "NODE_ENV=development npm-run-all -p start:*",
+    "dev": "NODE_ENV=development API_ENDPOINT=http://localhost:8080/ npm-run-all -p start:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "minamorl",
@@ -33,7 +33,7 @@
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
     "xhip": "0.0.19",
-    "xhip-client": "0.0.18",
-    "xhip-server": "0.0.8"
+    "xhip-client": "0.0.19",
+    "xhip-server": "0.0.9"
   }
 }
