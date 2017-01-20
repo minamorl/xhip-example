@@ -32,8 +32,8 @@
     "typescript": "^2.1.5",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
-    "xhip": "0.0.19",
+    "xhip": "0.0.21",
     "xhip-client": "0.0.19",
-    "xhip-server": "0.0.9"
+    "xhip-server": "0.0.10"
   }
 }

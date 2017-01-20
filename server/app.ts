@@ -1,8 +1,8 @@
-import { op, load } from "xhip"
+import { op, load, broadcast, Application } from "xhip"
 import * as _request from "request"
 const request = load<typeof _request>("request")
 
-export class App {
+export class App extends Application {
   @op echo(message: string) {
     return { message }
   }
@@ -16,8 +16,9 @@ export class App {
       console.log(err)
     })
   }
+  @broadcast
   @op chat(message: string) {
-    return { chat: 'Get: ' + message }
+    return { chat: `Get ${message} from ${this.req.ip}` }
   }
 }
 
