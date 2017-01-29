@@ -39,3 +39,4 @@ jspm_packages
 .env
 lib/
 bundle.js
+.vscode
