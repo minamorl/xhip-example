@@ -1,10 +1,12 @@
 import {observable} from "mobx"
 
+interface Message {
+  message: string
+  name: string
+}
 export class AppState {
-  @observable userIP = ''
   @observable message = ''
-  @observable ip = ''
   @observable input = ''
-  @observable messageList: string[] = []
+  @observable messageList: Message[] = []
 }
 export default new AppState()

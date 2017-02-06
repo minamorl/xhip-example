@@ -59,10 +59,6 @@ class App extends React.Component<{}, {}> {
     this.client = new Client("http://" + url, { ssl: false })
   }
   componentWillMount() {
-    this.client.exec([app.echo("hello, world!"), app.getServerIP()]).then((res: any) => {
-      appState.message = res.message
-      appState.ip = res.ip
-    })
     this.client.subscribe([app.chat], (res: any) => {
       appState.messageList = [...appState.messageList, res['chat']]
     })
@@ -85,7 +81,7 @@ class App extends React.Component<{}, {}> {
         </InputGroup>
         <div>
         { appState.messageList.map((x, i) =>
-          <Message name='anonymous' message={x} key={i}>{x}</Message>) }
+          <Message name={x.name} message={x.message} key={i}>{x.message}</Message>) }
         </div>
       </Content>
     </AppBase>
