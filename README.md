@@ -8,5 +8,7 @@ Working example is here: http://xhip-example.heroku.com/
 
 ```
 npm install
-sudo npm dev 
+npm run dev
 ```
+
+The example app will be launched on `http://localhost:8888/`.
