@@ -59,8 +59,8 @@ class App extends React.Component<{}, {}> {
     this.client = new Client("http://" + url, { ssl: false })
   }
   componentWillMount() {
-    this.client.subscribe([app.chat], (res: any) => {
-      appState.messageList = [...appState.messageList, res['chat']]
+    this.client.subscribe(app.chat, res => {
+      appState.messageList = [...appState.messageList, res.chat]
     })
   }
   onClick = () => {
