@@ -4,7 +4,7 @@ const request = load<typeof _request>("request")
 
 export class App extends Application {
   @broadcast
-  @op chat(message: string) {
+  @op async chat(message: string) {
     return {
       chat: {
         name: this.req.ip,
